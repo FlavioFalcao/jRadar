@@ -18,11 +18,13 @@ import javax.swing.JFrame;
 
 public class RadarScope extends JFrame {
 
-    private final int layers;
+    protected static final long CYCLE_TIME = 3000L;                                // milliseconds
+    protected static final long SNAPSHOT_TIME = (CYCLE_TIME / 6L);                 // milliseconds (500 ms)
+    protected static final int DISPLAY_LAYERS = (int)(CYCLE_TIME / SNAPSHOT_TIME); // 6 layers
+    protected JRadarComponent displayScreen;
 
-    public RadarScope(int layers) {
-        this.layers = layers;
-        
+    public RadarScope() {
+        displayScreen = new JRadarComponent();
         initComponents();
     }
 
@@ -31,6 +33,7 @@ public class RadarScope extends JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Radar Scope v1.0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
