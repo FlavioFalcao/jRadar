@@ -17,3 +17,4 @@ data. Thus, the old EchoOverlay1 data is moved to EchoOverlay2, 2 to 3, 3 to
 
 This then provides a 3 second animation history of the last minute of radar data.
 
+Two more layers are needed to complete the display.  At the very top layer is the Track symbology. This is a track block which contains data about the target, along with a speed vector to show direction as determined by echo history. At the very bottom is an opaque layer which will show a map and any special points that have been inserted. The operator can also draw lines, rectangles, or circles in various colors to highlight any areas of the map.
